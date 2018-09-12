@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>APP-SISMED</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: "Montserrat";
+            overflow: hidden;
+        }
+        h1{
+            margin: 0;
+        }
+        header{
+            margin: 0;
+            padding: 5px; 
+            background: linear-gradient(to left, #FFF12C, #FFB119 );
+            position: fixed;
+            width: 100%;
+        }
+        header h1{
+            margin: 0;
+            font-size: 8px;
+            text-align: center;
+            color: black;
+        }
+        a, button{
+            text-decoration: none;
+            background: linear-gradient(to left , #8700CC ,  #7909B2);
+            border: none;
+            padding: 10px;
+            color: #FFF12C;
+            font-size: 20px;
+            font-family: "Montserrat" !important;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px 1px black;
+            width: 70vw;
+            /* text-align: center; */
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+        }
+        
+        .modales div{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            position: relative;
+            overflow: auto;
+        }
+        #doctores{
+            /* height: auto; */
+            overflow: auto;
+            display: grid;
+        }
+        #doctores img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        #doctores .doctor{
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border: 3px solid black;
+            border-radius: 10px;
+            padding: 5px 20px;
+            margin: 10px 0;
+        }
+        #audio{
+            width: auto;
+            background: brown;
+            font-family: "Montserrat" !important;
+        }
+        #audio:before{
+            font-family: "icomoon";
+            text-align: center;
+        }
+        .atras{
+            /* position: absolute; */
+            top: 20px;
+            left: 20px;
+            width: 20px;
+            background: #FFB119;
+            color: black;
+            padding: 5px;
+            border-radius: 50%;
+            align-self: start;
+            margin-left: 20px;
+        }
+        .estrellas{
+            width: 40vw !important;
+            height: auto !important;
+            border-radius: 0 !important;
+        }
+        #mapa{
+            text-align: center;
+        }
+        #mapaimage{
+            width: 100vw;
+        }
+        #mapa a{
+            background: brown;
+        }
+        
+        a:before{
+            font-family: "icomoon";
+            text-align: start;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SIS-MED</h1>
+    </header>
+    <section id="modales" class="modales">
+        <div>
+            <h1>
+                ¿Cuál es su situación?
+            </h1>
+            <a class="icon-health" href="#emergencia">
+                Emergencias
+            </a>
+            <a class="icon-injection" href="#consulta">
+                Consulta
+            </a>
+        </div>
+        <div id="emergencia">
+            <!-- <a href="#modales" class="atras icon-circle-left"></a> -->
+            <h1>¿Cuál es la emergencia?</h1>
+            <a class="icon-heart-broken" href="#mapa">Infarto</a>
+            <a class="icon-feed" href="#mapa">Epilepsia</a>
+            <a class="icon-droplet" href="#mapa">Herida</a>
+            <button class="icon-mic" id="audio">Mandar Audio</button>
+        </div>
+        <div id="consulta" >
+            <!-- <a href="#modales" class="atras icon-circle-left"></a> -->
+            <a class="icon-man" href="#areas">Revisión rutinaria</a>
+            <a class="icon-pil" href="#areas">Incoveniente de salud</a>
+            
+        </div>
+        <div id="areas">
+            <!-- <a href="#consulta" class="atras icon-circle-left"></a> -->
+            <a href="#doctores">Médico General</a>
+            <a href="#doctores">Urólogos</a>
+            <a href="#doctores">Ginecólogos</a>
+            <a href="#doctores">Urólogos</a>
+            <a href="#doctores">Odontólogos</a>
+        </div>
+        <div id="doctores">
+            <!-- <a href="#areas" class="atras icon-circle-left"></a> -->
+            <section class="doctor">
+                <h1>Roberto Carlos Gonzales</h1>
+                <img src="images/doc1.jpg" alt="fotodoctor">
+                <section id="puntuación">
+                    <img src="images/estrellas.png" class="estrellas" alt="estrellas puntos">
+                </section>
+                <a class="icon-clipboard" href="#info-doctor">Más información</a>
+                <a class="icon-calendar" href="#solicitar-cita">Solicitar Cita</a>
+            </section>
+            
+            <section class="doctor">
+                <h1>Alex Charles Darwin</h1>
+                <img src="images/doc2.jpg" alt="fotodoctor">
+                <section id="puntuación">
+                    <img src="images/estrellas.png" class="estrellas" alt="estrellas puntos">
+                </section>
+                <a class="icon-clipboard" href="#info-doctor">Más información</a>
+                <a class="icon-calendar" href="#solicitar-cita">Solicitar Cita</a>
+            </section>
+            
+            <section class="doctor">
+                <h1>Maria Rosa Melgueréz</h1>
+                <img src="images/doc3.jpg" alt="fotodoctor">
+                <section id="puntuación">
+                    <img src="images/estrellas.png" class="estrellas" alt="estrellas puntos">
+                </section>
+                <a class="icon-clipboard" href="#info-doctor">Más información</a>
+                <a class="icon-calendar" href="#solicitar-cita">Solicitar Cita</a>
+            </section>
+            
+            <section class="doctor">
+                <h1>Antonio Pinto</h1>
+                <img src="images/doc4.jpg" alt="fotodoctor">
+                <section id="puntuación">
+                    <img src="images/estrellas.png" class="estrellas" alt="estrellas puntos">
+                </section>
+                <a class="icon-clipboard" href="#info-doctor">Más información</a>
+                <a class="icon-calendar" href="#solicitar-cita">Solicitar Cita</a>
+            </section>
+            
+            <section class="doctor">
+                <h1>Walter Rizo Quispe</h1>
+                <img src="images/doc5.jpg" alt="fotodoctor">
+                <section id="puntuación">
+                    <img src="images/estrellas.png" class="estrellas" alt="estrellas puntos">
+                </section>
+                <a class="icon-clipboard" href="#info-doctor">Más información</a>
+                <a class="icon-calendar" href="#solicitar-cita">Solicitar Cita</a>
+            </section>
+        </div>
+        <div id="solicitar-cita">
+            <!-- <a href="#doctores" class="atras icon-circle-left"></a> -->
+            <img src="images/calendario.jpg" alt="calendario">
+        </div>
+        <div id="info-doctor">
+            <!-- <a href="#doctores" class="atras icon-circle-left"></a> -->
+            <a class="icon-file-text2" href="assets/cv.pdf" download="Hoja de Vida del Doctor">Curriculum</a>
+            <a class="icon-whatsapp" href="https://api.whatsapp.com/send?phone=59170657034&text=Hola vengo de la app SIS-MED deseo pedir una consulta">Enviar Whatsapp</a>
+            <a class="icon-phone" href="tel: +59170657034">Llamar</a>
+            <a class="icon-envelop" href="mailto:alejandrofaesta@gmail.com">Enviar Correo</a>
+        </div>
+        <div id="mapa">
+            <h2>Tiempo estimado: <br> <strong>17 MINUTOS</strong></h2>
+            <img src="images/mapa.jpg" id="mapaimage" alt="mapa">
+            <a href="tel:+59170657034">Llamar</a>
+        </div>
+    </section>
+    
+</body>
+</html>

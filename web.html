@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <title>Propuesta Frontend</title>
+    <style>
+        body{
+            margin: 0;
+            /* overflow: hidden; */
+            font-family: "Montserrat"
+        }
+        .antes{
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+        .antes img{
+            height: 100%;
+            width: 100%;
+        }
+        a{
+            position: absolute;
+            z-index:2 ;
+            top: 80%;
+            left: 70%;
+            background:teal;
+            color: white;
+            padding: 25px;
+            box-shadow: 2px 2px 5px 2px black;
+        }
+        .despues{
+            display: flex;
+            /* flex-direction:row; */
+            height: 100vh;
+            width: 400vw;
+            overflow: auto;
+            /* position: absolute; */
+            transition: .5s;
+        }
+        .despues div{
+            width: 100vw;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background: linear-gradient(#FFF12C, #FFB119 );
+            padding: 150px;
+            /* height: 100vw; */
+            position: relative;
+        }
+        .despues section{
+            display: flex;
+            flex-direction: column;
+        }
+        .despues input{
+            background: #fafafa;
+            border: none;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            outline: none;
+            box-shadow: 2px 2px 12px 0.5px black;
+        }
+        .siguiente{
+            
+            background: linear-gradient(to left , #8700CC ,  #7909B2);
+            border: none;
+            padding: 15px;
+            color: #FFF12C;
+            font-size: 25px;
+            font-family: "Montserrat" !important;
+            border-radius: 15px;
+            /* position: absolute;
+            bottom: 50px;
+            right: 50px; */
+            box-shadow: 2px 2px 5px 1px black;
+        }
+        .siguiente:after{
+            font-family: "icomoon";
+            content:" \ea42";
+            vertical-align: middle;
+        }
+        .atras{
+            /* position: absolute; */
+            top: 50px;
+            left: 50px; 
+            background: none;
+            border: none;
+        }
+        .atras:before{
+            font-family: "icomoon";
+            content:" \ea44";
+            vertical-align: middle;
+            background: linear-gradient(to left , #8700CC ,  #7909B2);
+            border: none;
+            padding: 15px;
+            color: #FFF12C;
+            font-size: 25px;
+            border-radius: 15px;
+            box-shadow: 2px 2px 5px 1px black;
+        }
+        #enviar{
+            background: #FFB119;
+            border: none;
+            padding: 15px;
+            color: #7909B2;
+            font-size: 25px;
+            font-family: "Montserrat" !important;
+            border-radius: 15px;
+            box-shadow: 2px 2px 5px 1px black;
+        }
+        .sexo{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .sexo input{
+            display: none;  
+        }
+        .sexo label{
+            text-align: center;
+        }
+        .sexo label:before{
+            font-family: "icomoon";
+            font-size: 50px;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 0 10px;
+        }
+        .sexo label:nth-of-type(1):before{
+            content: "\e9dd";
+        }
+        .sexo label:nth-of-type(2):before{
+            content: "\e9dc";
+        }
+        .sexopintado:before{
+            background: #8700CC;
+            
+            color: #FFF12C;
+        }
+        
+    </style>
+</head>
+<body>
+    <section class="antes"> 
+        <img src="images/webbad.jpg" alt="webbad">
+        <a href="#despues">EVOLUCIONAR → → → →</a>
+    </section>
+    <section class="despues" id="despues">
+        <div class="modal">
+            <section>
+                <input placeholder="Nombres" type="text">
+                <input placeholder="Apellidos" type="text">
+                
+                <span class="sexo">
+                    <label for="mujer" id="mujer-label">
+                        <input type="radio" id="mujer" name="sexo" value="mujer"> <br>Mujer
+                    </label>
+                    <label for="hombre" id="hombre-label">
+                        <input type="radio" id="hombre" name="sexo" value="hombre"> <br>Hombre
+                    </label>
+                </span>
+
+            </section>
+            <button class="siguiente">Siguiente</button>
+        </div>
+        <div class="modal">
+            <button class="atras"></button>
+            <section>
+                <input placeholder="CI:" type="text">
+                <input placeholder="Estado Civil" type="text">
+                <input placeholder="Lugar de nacimiento" type="text">
+
+            </section>
+            <button class="siguiente">Siguiente</button>
+        </div>
+        <div class="modal">
+            <button class="atras"></button>
+            <section>
+                <input placeholder="Zona" type="text">
+                <input placeholder="Calle" type="text">
+                <input placeholder="Número de hogar" type="text">
+
+            </section>
+            <button class="siguiente">Siguiente</button>
+        </div>
+        <div class="modal">
+                <button class="atras"></button>
+                <section>
+                    <input placeholder="Celular" type="text">
+                    <input placeholder="E-mail" type="text">
+                    <input placeholder="Teléfono" type="text">
+
+                </section>
+                <button id="enviar">Enviar</button>
+        </div>
+       
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"> </script>
+    <script>
+        const modales = document.getElementById("despues")
+        const siguiente = document.getElementsByClassName("siguiente")
+        const atras = document.getElementsByClassName("atras")
+        const enviar = document.getElementById("enviar")
+        const hombre = document.getElementById("hombre")
+        const mujer = document.getElementById("mujer")
+        const hombreLabel = document.getElementById("hombre-label")
+        const mujerLabel = document.getElementById("mujer-label")
+        count=0;
+        for (let index = 0; index < atras.length; index++) {
+            
+            atras[index].addEventListener("click",()=>{
+                count = count+100
+                modales.style.transform = "translateX("+count+"vw)";
+            })
+            
+        }
+        for (let index = 0; index < siguiente.length; index++) {
+            
+            siguiente[index].addEventListener("click",()=>{
+                count = count-100
+                modales.style.transform = "translateX("+count+"vw)";
+            })
+            
+        }
+        enviar.addEventListener("click",()=>{
+            swal("Enviado")
+        })
+        hombre.addEventListener("click",()=>{
+            if (hombre.checked){
+                hombreLabel.className= "sexopintado";
+                mujerLabel.className=""
+            }
+        })
+        mujer.addEventListener("click",()=>{
+            if (mujer.checked){
+                mujerLabel.className= "sexopintado";
+                hombreLabel.className=""
+            }
+
+        })
+    </script>
+</body>
+</html>
